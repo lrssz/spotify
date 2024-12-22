@@ -149,20 +149,36 @@ header {
 .sidebar__library {
     display: flex;
     flex-direction: row;
-    gap: 80px;
+    padding-left: 16px;
 }
 
-.sidebar__library i, .sidebar__library p {
+.sidebar__library h5 {
     color: #B7B3B6;
-    font-size: 12px;
+    font-size: 16px;
+    margin: 0 50px 0 12px;
+    
+}
+
+.sidebar__library i {
+    color: #B7B3B6;
+    font-size: 24px;
     cursor: pointer;
+}
+
+.sidebar__library p {
+    color: #B7B3B6;
+    font-size: 28px;
+    padding-bottom: 4px;
+    margin: 0 16px 0 70px;
+    cursor: pointer;
+    font-weight: 200;
 }
 
 .sidebar__playlist, .sidebar__podcast {
     background-color: #242424;
     padding: 16px;
     border-radius: 8px;
-    margin-top: 16px;
+    margin-bottom: 16px;
     overflow-y: auto;
 }
 
@@ -189,14 +205,13 @@ header {
     cursor: pointer;
 }
 
-footer {
+.footer__library {
     padding-left: 16px;
     gap: 20px;
-    margin-top: 16px;
+    margin-top: 12px;
 }
 
-footer a {
-    margin-top: 400px;
+.footer__library a {
     color: #a7a7a7;
     text-decoration: none;
     font-size: 10px;
@@ -206,7 +221,7 @@ footer a {
     justify-content: space-around;
 }
 
-footer p {
+.footer__library p {
     font-size: 10px;
     margin-top: 10px;
 }
@@ -216,17 +231,17 @@ footer p {
     border: 1px solid #fff;
     color: #fff;
     padding: 8px 12px;
-    margin-top: 40px;
+    margin-top: 20px;
     cursor: pointer;
     border-radius: 20px;
-    font-size: 12px;
-    font-weight: lighter;
+    font-size: 13px;
+    font-weight: bold;
 }
 
 .content {
     grid-area: content;
     background: linear-gradient(#242424, #121212);
-    margin: 20px 16px;
+    margin: 60px 16px;
     flex: 1;
     padding: 24px;
     overflow-y: auto;
@@ -249,7 +264,7 @@ footer p {
     padding: 4px 0;
     text-align: center;
     cursor: pointer;
-    transition:  background-color 0.3s;
+    transition:  background-color 0.2s;
 }
 
 .artists__gridCard h3, .albums__gridCard h3 {
@@ -270,16 +285,35 @@ footer p {
 }
 
 .artists__gridCard img {
-    max-width: 130px;
+    max-width: 150px;
     height: auto;
     border-radius: 100%;
 }
 
 .albums__gridCard img {
-    max-width: 130px;
+    max-width: 160px;
     height: auto;
-    border-radius: 10px;
+    border-radius: 8px;
     
+}
+
+hr {
+    border-color: #121212;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.footer__copyrights {
+    margin-bottom: 24px;
+    padding-left: 16px;
+    gap: 20px;
+}
+
+.footer__copyrights a {
+    color: #a7a7a7;
+    text-decoration: none;
+    font-size: 14px;
+    margin-right: 12px;
 }
 
 aside {
