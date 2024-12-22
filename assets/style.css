@@ -21,7 +21,7 @@ body {
         "header header"
         "sidebar content"
         "aside aside";
-    grid-template-columns: 420px 1fr;
+    grid-template-columns: 350px 1fr;
     grid-template-rows: auto 1fr auto;
     height: 100vh;
     background-color: black;
@@ -136,7 +136,7 @@ header {
     grid-area: sidebar;
     position: fixed;
     left: 0;
-    width: 420px;
+    width: 350px;
     background-color: #121212;
     padding: 24px 8px;
     padding-bottom: 90px;
