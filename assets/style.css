@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "sidebar content"
+        "aside aside";
+    grid-template-columns: 330px 1fr;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    background-color: black;
+    color: white;
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: #000;
+    margin-top: 8px;
+}
+
+.header__logo i {
+    font-size: 24px;
+    margin-right: 20px;
+}
+
+.header__search {
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    padding: 5px 15px;
+    gap: 10px;
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+.header__search button {
+    background-color: #121212;
+    border-radius: 100%;
+    height: 40px;
+    padding: 6px 10px;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.header__search button:hover {
+    background-color: #333;
+}
+
+.header__searchBar {
+    display: flex;
+    align-items: center;
+    background-color: #121212;
+    border-radius: 20px;
+    padding: 5px 10px;
+    flex-grow: 1;
+    max-width: 600px;
+    height: 40px;
+}
+
+.header__searchBar input {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    margin-left: 10px;
+    width: 100%;
+    outline: none;
+    font-size: 14px;
+}
+
+.header__searchBar i {
+    color: #a7a7a7;
+}
+
+.header__buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.header__buttons .sub{
+    background-color: transparent;
+    color: #fff;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border: none;
+}
+
+.header__buttons .in {
+    background-color: #fff;
+    color: #000;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border: none;
+}
+
+
+.header__buttons sub:hover, .header__buttons in:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+
+.sidebar {
+    margin: 8px;
+    grid-area: sidebar;
+    width: 330px;
+    background-color: #121212;
+    padding: 24px;
+    padding-bottom: 90px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+}
+
+.sidebar__library {
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+}
+
+.sidebar__library i, .sidebar__library p {
+    color: #B7B3B6;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.sidebar__playlist, .sidebar__podcast {
+    background-color: #242424;
+    padding: 16px;
+    border-radius: 8px;
+    margin-top: 16px;
+}
+
+.sidebar__playlist h1, .sidebar__podcast h1 {
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.sidebar__playlist p, .sidebar__podcast p {
+    color: #fff;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.sidebar__playlist button, .sidebar__podcast button {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+footer a {
+    color: #a7a7a7;
+    text-decoration: none;
+    font-size: 12px;
+    margin-right: 12px;
+    margin-bottom: 8px;
+    align-items: baseline;
+    justify-content: space-around;
+}
+
+footer p {
+    font-size: 12px;
+}
+
+.footer__button {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 8px 12px;
+    margin-top: 16px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.content {
+    grid-area: content;
+    background-color: #121212;
+    margin: 8px 16px;
+    flex: 1;
+    padding: 24px;
+    overflow-y: auto;
+    border-radius: 16px;
+}
+
+.content h2 {
+    color: white;
+    font-size: 24px;
+}
+
+.artists__grid, .albums__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    margin-top: 24px;
+    margin-bottom: 40px;
+}
+
+.artists__gridCard, .albums__gridCard{
+    padding: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition:  background-color 0.3s;
+}
+
+.artists__gridCard h3, .albums__gridCard h3 {
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.artists__gridCard p, .albums__gridCard p {
+    color: #B7B3B6;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.artists__gridCard:hover, .albums__gridCard:hover{
+    background-color: #282828;
+    border-radius: 8px;
+}
+
+.artists__gridCard img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 100%;
+}
+
+.albums__gridCard img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 10px;
+    
+}
+
+aside {
+    grid-area: aside;
+    background: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+}
