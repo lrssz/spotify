@@ -42,25 +42,25 @@ header {
 }
 
 .header__logo i {
-    font-size: 24px;
-    margin-right: 20px;
+    font-size: 32px;
+    margin-left: 10px;
 }
 
 .header__search {
     display: flex;
     align-items: center;
     border-radius: 20px;
-    padding: 5px 15px;
+    padding: 0 250px 8px 420px;
     gap: 10px;
     flex-grow: 1;
     margin: 0 20px;
 }
 
 .header__search button {
-    background-color: #121212;
+    background-color: #242424;
     border-radius: 100%;
-    height: 40px;
-    padding: 6px 10px;
+    height: 47px;
+    padding: 6px 13px;
     border: none;
     color: #fff;
     font-size: 20px;
@@ -69,17 +69,22 @@ header {
 
 .header__search button:hover {
     background-color: #333;
+    transform: scale(1.1);
 }
 
 .header__searchBar {
     display: flex;
     align-items: center;
-    background-color: #121212;
-    border-radius: 20px;
-    padding: 5px 10px;
+    background-color: #242424;
+    border-radius: 30px;
+    padding: 5px 16px;
     flex-grow: 1;
-    max-width: 600px;
-    height: 40px;
+    max-width: 500px;
+    height: 47px;
+}
+
+.header__searchBar:hover {
+    background-color: #333; 
 }
 
 .header__searchBar input {
@@ -88,12 +93,14 @@ header {
     color: #fff;
     margin-left: 10px;
     width: 100%;
-    outline: none;
-    font-size: 14px;
+    outline: #fff;
+    font-size: 16px;
+    padding: 4px;
 }
 
 .header__searchBar i {
-    color: #a7a7a7;
+    color: #B7B3B6;
+    font-size: 20px;
 }
 
 .header__buttons {
@@ -103,36 +110,40 @@ header {
 
 .header__buttons .sub{
     background-color: transparent;
-    color: #fff;
-    padding: 8px 16px;
+    color: #B7B3B6;
+    padding: 6px 16px;
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    transition: 0.2s;
     border: none;
 }
 
 .header__buttons .in {
+    height: 40px;
     background-color: #fff;
     color: #000;
-    padding: 8px 16px;
+    padding: 0 16px;
     font-size: 14px;
     font-weight: bold;
-    border-radius: 20px;
+    border-radius: 70px;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    transition: 0.2s;
     border: none;
 }
 
 
-.header__buttons sub:hover, .header__buttons in:hover {
-    background-color: #fff;
-    color: #000;
+.header__buttons .sub:hover {
+    color: #fff;
+    transform: scale(1.1);
 }
 
+.header__buttons .in:hover {
+    transform: scale(1.1);
+}
 
 .sidebar {
-    margin: 60px 8px;
+    margin: 64px 8px;
     grid-area: sidebar;
     position: fixed;
     left: 0;
@@ -203,6 +214,11 @@ header {
     font-weight: bold;
     border-radius: 20px;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+.sidebar__playlist button:hover, .sidebar__podcast button:hover{
+    transform: scale(1.1);
 }
 
 .footer__library {
@@ -238,10 +254,14 @@ header {
     font-weight: bold;
 }
 
+.footer__button:hover {
+    transform: scale(1.1);
+}
+
 .content {
     grid-area: content;
     background: linear-gradient(#242424, #121212);
-    margin: 60px 16px;
+    margin: 64px 16px;
     flex: 1;
     padding: 24px;
     overflow-y: auto;
@@ -261,6 +281,7 @@ header {
 }
 
 .artists__gridCard, .albums__gridCard{
+    position: relative;
     padding: 4px 0;
     text-align: center;
     cursor: pointer;
@@ -295,6 +316,34 @@ header {
     height: auto;
     border-radius: 8px;
     
+}
+
+.play__button {
+    position: absolute; 
+    bottom: 38%;
+    right: 10%; 
+    width: 40px; 
+    height: 40px; 
+    background-color: #1db954; 
+    border-radius: 50%; 
+    display: none; 
+    align-items: center; 
+    justify-content: center; 
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.artists__gridCard:hover .play__button, .albums__gridCard:hover .play__button {
+    display: flex;
+}
+
+.play__button::before {
+    content: ''; 
+    border: solid #000; 
+    border-width: 8px 0 8px 12px; 
+    border-color: transparent transparent transparent #000; 
+    display: block;
+    margin-left: 3px;
 }
 
 hr {
@@ -358,4 +407,9 @@ aside {
     border-radius: 200px;
     cursor: pointer;
     margin-left: auto;
+    transition: 0.3s;
+}
+
+.ad button:hover{
+    transform: scale(1.1);
 }
