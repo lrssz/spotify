@@ -132,7 +132,6 @@ header {
     border: none;
 }
 
-
 .header__buttons .sub:hover {
     color: #fff;
     transform: scale(1.1);
@@ -160,6 +159,7 @@ header {
 .sidebar__library {
     display: flex;
     flex-direction: row;
+    align-items: center;
     padding-left: 16px;
 }
 
@@ -167,7 +167,7 @@ header {
     color: #B7B3B6;
     font-size: 16px;
     margin: 0 50px 0 12px;
-    
+    cursor: pointer;
 }
 
 .sidebar__library i {
@@ -183,6 +183,11 @@ header {
     margin: 0 16px 0 70px;
     cursor: pointer;
     font-weight: 200;
+    cursor: pointer;
+}
+
+.sidebar__library h5:hover, .sidebar__library i:hover, .sidebar__library p:hover {
+    color: #fff;
 }
 
 .sidebar__playlist, .sidebar__podcast {
@@ -240,6 +245,7 @@ header {
 .footer__library p {
     font-size: 10px;
     margin-top: 10px;
+    cursor: pointer;
 }
 
 .footer__button {
@@ -252,6 +258,7 @@ header {
     border-radius: 20px;
     font-size: 13px;
     font-weight: bold;
+    transition: 0.1s;
 }
 
 .footer__button:hover {
@@ -261,16 +268,62 @@ header {
 .content {
     grid-area: content;
     background: linear-gradient(#242424, #121212);
-    margin: 64px 16px;
+    margin: 64px 8px 64px 16px;
     flex: 1;
     padding: 24px;
     overflow-y: auto;
     border-radius: 8px;
 }
 
-.content h2 {
-    color: white;
-    font-size: 24px;
+.content::-webkit-scrollbar {
+    display: none;
+}
+
+.content:hover::-webkit-scrollbar {
+    display: block;
+    width: 12px;
+}
+
+.content:hover::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.content:hover::-webkit-scrollbar-thumb {
+    background: #838182a9;
+}
+
+.content:hover::-webkit-scrollbar-thumb:hover {
+    background: #929292;
+}
+
+.content__artistsTitle, .content__albumsTitle {
+    margin: 0;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.content__artistsTitle h2, .content__albumsTitle h2 {
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.content__artistsTitle h2:hover, .content__albumsTitle h2:hover {
+    text-decoration: underline;
+}
+
+.content__artistsTitle button, .content__albumsTitle button{
+    background-color: transparent;
+    border: none;
+    color: #B7B3B6;
+    font-size: 12px; 
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.content__artistsTitle button:hover, .content__albumsTitle button:hover {
+    text-decoration: underline;
 }
 
 .artists__grid, .albums__grid {
@@ -291,13 +344,22 @@ header {
 .artists__gridCard h3, .albums__gridCard h3 {
     color: #fff;
     font-size: 16px;
+    font-weight: 400;
     margin-bottom: 4px;
+}
+
+.artists__gridCard h3:hover, .albums__gridCard h3:hover{
+    text-decoration: underline;
 }
 
 .artists__gridCard p, .albums__gridCard p {
     color: #B7B3B6;
     font-size: 12px;
     margin-bottom: 8px;
+}
+
+.albums__gridCard p:hover {
+    text-decoration: underline;
 }
 
 .artists__gridCard:hover, .albums__gridCard:hover{
@@ -315,15 +377,14 @@ header {
     max-width: 160px;
     height: auto;
     border-radius: 8px;
-    
 }
 
 .play__button {
     position: absolute; 
-    bottom: 38%;
-    right: 10%; 
-    width: 40px; 
-    height: 40px; 
+    bottom: 30%;
+    right: 12%; 
+    width: 45px; 
+    height: 45px; 
     background-color: #1db954; 
     border-radius: 50%; 
     display: none; 
@@ -337,10 +398,15 @@ header {
     display: flex;
 }
 
+.artists__gridCard:hover .play__button:hover, .albums__gridCard:hover .play__button:hover {
+    display: flex;
+    transform: scale(1.1);
+}
+
 .play__button::before {
     content: ''; 
     border: solid #000; 
-    border-width: 8px 0 8px 12px; 
+    border-width: 10px 0 10px 14px; 
     border-color: transparent transparent transparent #000; 
     display: block;
     margin-left: 3px;
